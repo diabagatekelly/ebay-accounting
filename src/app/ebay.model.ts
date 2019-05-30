@@ -14,5 +14,7 @@ public Title = '';
 public SKU = '';
 public Variations = '';
 public VariationTitle = '';
-
+public Quantity: number;
+public SellingStatus;
+public QuantityAvailable;
 }

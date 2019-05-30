@@ -8,14 +8,14 @@ import { EbayService } from './ebay.service';
 import { InventoryComponent } from './inventory/inventory.component';
 import { BasicInterceptorService } from './basic-interceptor.service';
 import { ToppikPipe } from './Pipes/filterToppik.pipe';
-import { ToppikVariationsPipe } from './Pipes/filterToppikVariations.pipe';
+import { ArraySortPipe } from './Pipes/filterQuantity.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     InventoryComponent,
     ToppikPipe,
-    ToppikVariationsPipe
+    ArraySortPipe
   ],
   imports: [
     BrowserModule,

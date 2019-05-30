@@ -27,7 +27,7 @@
             <td>
             </td>
               <td class="col-xs-5">
-                {{item.QuantityAvailable}}
+                {{item.QuantityAvailable || item.Quantity - item.SellingStatus.QuantitySold }}
               </td>
               </tr>
             </div>

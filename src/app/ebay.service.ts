@@ -25,6 +25,7 @@ export class EbayService implements OnInit {
        <EntriesPerPage>200</EntriesPerPage>
        <PageNumber>1</PageNumber>
      </Pagination>
+     <DetailLevel>ReturnAll</DetailLevel>
    </ActiveList>
    <SoldList>
     <Include>true</Include>

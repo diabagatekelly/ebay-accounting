@@ -7,16 +7,14 @@ import { Ebay } from '../ebay.model';
 })
 
 export class ToppikPipe implements PipeTransform {
-    // filterDuplicates = (value, index, self) => {
-    //     return self.indexOf(value) === index;
-    //   }
-    //   this.filteredAuthorsID = this.onlyAuthorsID.filter(this.distinct);
-
+    filterDuplicates = (value, index, self) => {
+        return self.indexOf(value) === index;
+    }
 
     transform(input: Ebay[]) {
         const output = [];
         for (let i = 0; i <= input.length - 1; i++) {
-            if (input[i].Variations === undefined) {
+            if (input[i].VariationTitle === undefined) {
                 // tslint:disable-next-line:max-line-length
                 if (input[i].SKU !== 'Toppik-dbrown' && input[i].SKU !== 'Toppik-medbrown' && input[i].SKU !== 'Toppik-black' && input[i].SKU !== 'Toppik-lbrown' && input[i].SKU !== 'Toppik-medblonde' && input[i].SKU !== 'Toppik-aub' && input[i].SKU !== 'Toppik-gray' && input[i].SKU !== 'Toppik-white') {
                     output.push(input[i]);
@@ -45,7 +43,7 @@ export class ToppikPipe implements PipeTransform {
                     input[i].Title = 'Toppik Fibers - Giant - White';
                     output.push(input[i]);
                 }
-            } else if (input[i].Variations !== undefined) {
+            } else if (input[i].VariationTitle !== undefined) {
                 // tslint:disable-next-line:max-line-length
                 if (input[i].SKU !== 'Toppik-dbrown' && input[i].SKU !== 'Toppik-medbrown' && input[i].SKU !== 'Toppik-black' && input[i].SKU !== 'Toppik-lbrown' && input[i].SKU !== 'Toppik-medblonde' && input[i].SKU !== 'Toppik-aub' && input[i].SKU !== 'Toppik-gray' && input[i].SKU !== 'Toppik-white') {
                     output.push(input[i]);
@@ -77,7 +75,6 @@ export class ToppikPipe implements PipeTransform {
             }
         }
         return output;
-
     }
 }
 
