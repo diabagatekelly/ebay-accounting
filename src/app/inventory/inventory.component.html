@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <button class="btn btn-primary" (click)="getEbayItems()">Get Inventory</button>
+  </div>
+  <div class="row">
+    <div class="col-8">
+    <table class="table table-striped">
+      <thead>
+        <th>Currently Active</th>
+      </thead>
+      <thead>
+        <tr>
+          <th scope="col-xs-2">#</th>
+          <th scope="col-xs-5">Name</th>
+          <th scope="col-xs-5">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div *ngFor="let item of activelySelling | toppik; let i = index">
+          <tr>
+            <td class="col-xs-2">
+                {{i + 1}}
+            </td>
+              <td class="col-xs-5">
+                <div>{{item.Title || item.VariationTitle}}</div>
+            </td>
+            <td>
+            </td>
+              <td class="col-xs-5">
+                {{item.QuantityAvailable || item.Quantity - item.SellingStatus.QuantitySold }}
+              </td>
+              </tr>
+            </div>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
